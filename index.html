@@ -14,14 +14,22 @@
 
         <script type="text/babel">
             function Button(props){
-                return React.createElement(
-                'button',
-                {style:{color: props.color}},
-                props.children + ' click me',
+                return (
+                    <button 
+                        style = {{color: props.color}}
+                    >
+                        {props.children} click me
+                    </button>
                 );
             }
             function App(){
-                return <Button color = {'red'}>Hello React</Button>
+                return (
+                    <Button 
+                        color = {'red'}
+                    >
+                        Hello React
+                    </Button>
+                );
             }
             ReactDOM.render(
                 React.createElement(App),
