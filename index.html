@@ -13,26 +13,31 @@
         <div id = "modal-root"></div>
 
         <script type="text/babel">
+
             function Button(props){
+                const handlerClick = () => {
+                      console.log('click')
+                    }
+                const content = props.children || 'Click me';
                 return (
                     <button 
                         style = {{color: props.color}}
+                        onClick = {handlerClick}
                     >
-                        {props.children} click me
+                        {content}
                     </button>
                 );
             }
             function App(){
                 return (
-                    <Button 
-                        color = {'red'}
-                    >
-                        Hello React
-                    </Button>
+                    <div>
+                    <Button color = {'red'}>Hello React</Button>
+                    <Button color = {'purple'}/>
+                    </div>
                 );
             }
             ReactDOM.render(
-                React.createElement(App),
+                <App/>,
                 document.getElementById('app-root'),
             );
         </script>
